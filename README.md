@@ -1,56 +1,39 @@
-# Bridge Builder Challenge — Version 2.0
+# Bridge Builder Challenge — Version 3.0
 
-An original interactive engineering puzzle for the **Naches Learning Hub**. Students construct braced bridges, test them under increasingly demanding vehicle loads, study approximate stress, and revise their designs. Built with standard HTML, CSS, JavaScript, and SVG; no third-party packages or external services are required.
+An interactive engineering and reasoning game for the Naches Learning Hub. Build a bridge, test vehicles, study estimated stress and deflection, then revise the design. Designed for grades 5–8, with no AI service, paid APIs, or external game libraries.
 
-## Play the game
+## What's new in v3.0
 
-Publish the repository as GitHub Pages, then open:
+- **48 missions**, up from 12, grouped into eight six-mission environments with distinct colors and escalating loads, spans, and budgets.
+- **Concrete material** (unlocked at mission 5) alongside wood, steel, and cable. Concrete is modeled as useful in compression and adds self-weight; cables are more effective in tension. Costs vary by member length.
+- **Upper truss construction** (unlocked at mission 9). Use the Above Roadway / Below Roadway controls with Triangle Helper, or use Draw Beam for custom geometry. Upper truss members are rendered *in front of* the vehicle, making the vehicle visible behind the framing.
+- **Engineering Lab** with an optional prediction before each test and a short multiple-choice math, science, or engineering reasoning question. Students earn saved badges for correct answers; the lab never blocks mission progression.
+- **Revised teaching model for stress:** load is concentrated near the moving vehicle, with more demand at central spans, triangular reinforcement, member strength, and added weight from concrete. Colors and animated deck sagging are approximate.
+- **Preserves browser progress** from Bridge Builder v2 (unlocked missions, stars, and compatible saved bridge drafts).
 
-`https://jkramer-cloud.github.io/bridge-builder-challenge/`
+## How to play
 
-For local use, open `index.html` in a browser with its accompanying `styles.css` and `game.js` files.
+1. Choose **Triangle Helper** and click the numbered roadway panels. Each click builds a triangular support using your selected material, if it fits within the budget.
+2. Early missions support building **below** the road. On mission 9, **Above Roadway** becomes available. The Draw Beam and Erase tools allow custom supports.
+3. Compare material prices and the estimated weakest span. A single unsupported panel can cause failure, even if other panels are reinforced.
+4. In the optional **Engineering Lab**, predict whether the bridge will pass, and answer a short question for a learning badge.
+5. Press **Test Crossing**. The vehicle must reach the **far bank** before the next mission unlocks. Failed tests show a collapse and a weak span for redesign.
+6. Replay, improve the design, and work toward more stars by spending less and keeping estimated utilization lower.
 
-## V2 improvements
+## GitHub Pages
 
-- Rebuilt construction interface with **Triangle helper**, **Draw beam**, and **Erase** tools, and clearly numbered roadway panels.
-- 12 vehicle-themed levels: bicycle, compact car, pickup, delivery van, camper, school bus, semi truck, fire engine, dump truck, crane truck, tank, and train.
-- Illustrated 2D vehicles, scenic mountainous background, and larger interactive targets.
-- Visibly animated load transfer, colored span stress, deck bowing, and animated collapses.
-- A **Build Coach** identifies the weakest span and offers a one-click reinforcement option.
-- Material and budget decisions: wood, steel, and cable.
-- Undo and Reset Design controls.
-- Previous successful tests no longer carry over after any change; the **Next mission** button is enabled only after the test vehicle reaches the far bank and the current bridge fully passes.
-- Saved level unlocks, high scores, and construction drafts in browser local storage.
-- Responsive mobile layout and optional synthesized sound effects.
+Create or use an existing GitHub repository, for example `bridge-builder-challenge`. Upload `index.html`, `styles.css`, and `game.js` to the repository root. In **Settings → Pages**, publish `main` / `(root)`.
 
-## Instructions for students
+The game also comes as a standalone HTML file containing the same CSS and JavaScript inline, for offline browser use. To update an existing repository, replace those three source files. The Learning Hub launch link will stay the same if you keep the repository name.
 
-1. **Start with Triangle helper.** Click a numbered span to place a supporting triangle. Repeat across the roadway.
-2. **Choose wood, steel, or cable.** Steel carries more weight but costs more.
-3. Optionally use **Draw beam**. Click one joint and then another; you may also drag between joints or click below the bridge to create a new joint.
-4. Press **Test crossing** and watch how the deck reacts to the moving vehicle.
-5. If your bridge fails, inspect the highlighted weak span. Change the materials or bracing, and test again.
-6. Finish an entire crossing to unlock the next vehicle mission.
+## About the physics
 
-Completed missions can be replayed. The game tracks up to three stars per mission based on reserve strength and remaining budget.
+**This is an educational approximation, not a structural analysis tool.** The game does not perform finite-element analysis, engineering code checks, buckling calculations, detailed axle loading, or real-world material design. The metric called “stress” represents an illustrative **load-to-estimated-capacity ratio** in each roadway panel. It is useful for observing patterns and consequences, but results must not be used to design real bridges.
 
-## Publishing or upgrading on GitHub
+## Privacy and accessibility
 
-Replace the repository's `index.html` and add/replace `styles.css`, `game.js`, and `README.md` from this package. Enable **Settings → Pages → Deploy from a branch → main / root** if not already enabled.
+Everything runs locally in the browser. Progress and earned badges use browser localStorage. No students' names, accounts, or personal data are required. The design adapts to narrower screens, and buttons support keyboard focus. Drawing the bridge is easiest with mouse, touch, or a touchscreen/stylus.
 
-V2 imports the existing V1 unlocked-level and best-star record when it first runs in the same browser profile and at the same site address. It uses a new save key for V2 designs; users should not rely on browser storage as permanent records. Saved scores are local to the browser profile, not synchronized through Google accounts.
+## Credits
 
-## Teacher notes
-
-The bridge model is **a simplified, deterministic educational approximation**. It illustrates useful principles such as triangulation, uniform support, material choice, testing, cost, and iteration, but is not a finite-element structural solver, engineering calculation, construction specification, or safety-certified bridge model. Vehicle masses and bridge budgets are scaled for gameplay.
-
-Suggested discussions: Which spans had the highest stress? Why did supporting only the middle fail? Why might steel be worth paying for? What changed after reinforcement? What is the trade-off between structural strength and cost?
-
-## Files
-
-- `index.html` — accessible page structure and controls
-- `styles.css` — responsive styling
-- `game.js` — construction tools, tests, progression, and graphics
-- `README.md` — these instructions
-
-No personal identifiers or student accounts are collected by the game.
+Prepared for the Naches Learning Hub. Includes student-requested concrete, overhead materials, and a larger level campaign.
