@@ -75,3 +75,23 @@ body:has(#resultDialog[open]){overflow:hidden}
 @media (prefers-reduced-motion:reduce){.result-dialog *{animation:none!important;transition:none!important}}
 /* Maintain exact SVG 2:1 coordinate mapping for precise beam selections. */
 .shell.layout .stage{max-height:none;min-height:0;height:auto;aspect-ratio:2 / 1}
+
+/* Vehicle fleet and reference loads */
+.mission-vehicle{max-width:260px;min-width:160px}.mission-vehicle #vehicleMass{font-size:12px;color:#ffdc9b;font-weight:800}.mission-vehicle .vehicle-facts{font-size:10px;line-height:1.35;opacity:.88;margin-top:3px}.mission-vehicle a{font-size:11px;color:#9cf6e7}.fleet-actions{display:flex;flex-direction:column;align-items:stretch;gap:5px;margin:12px 0 6px}.fleet-actions small{font-size:11px;line-height:1.4;color:#c9d7dd}.fleet-list{max-height:min(64vh,580px);overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:12px}.fleet-entry{width:100%;display:grid;grid-template-columns:32px minmax(0,1fr) 46px;align-items:center;gap:8px;padding:8px;text-align:left;min-width:0}.fleet-entry strong{font-size:11px;display:block;white-space:normal}.fleet-entry small{color:#b5d7da;font-size:10px;display:block}.fleet-entry .fleet-icon{font-size:24px}.fleet-entry .fleet-tag{font-size:9px;color:#9ae7d8}.fleet-entry:disabled{opacity:.6}.fleet-entry.active{border-color:#ffd785;background:#376d68}.fleet-dialog{max-width:760px}.fleet-dialog .dialog-inner{padding:10px}.fleet-dialog p{font-size:12px}@media(max-width:700px){.fleet-list{grid-template-columns:1fr}.mission-vehicle{min-width:140px;max-width:190px}.mission-banner{flex-wrap:wrap}}
+
+.mission-vehicle{min-width:218px;max-width:252px}.mission-vehicle .vehicle-preview{display:block;width:100%;height:82px;margin:0 auto 2px;overflow:visible}.mission-vehicle .vehicle-emoji{display:none}.mission-vehicle #vehicleName{font-size:14px;line-height:1.2;font-weight:900}.mission-banner{align-items:stretch}@media(max-width:700px){.mission-vehicle{min-width:190px;max-width:100%;flex:1}.mission-vehicle .vehicle-preview{height:85px}}
+
+/* v4.3 Science Clearance: readable questions, guided numbers, recovery consequences */
+.number-answer{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;align-items:center}
+.answer-label{font-size:13px;font-weight:800;color:#f3edd4;display:block}
+#resultNumber{font:inherit;font-size:18px;width:min(225px,100%);max-width:100%;padding:10px 12px;border:2px solid #7fa3ac;border-radius:8px;background:#0b2739;color:#fff}
+#resultNumber:focus-visible{outline:3px solid #8cead2;outline-offset:2px}
+#resultNumber.incorrect{border-color:#f89599}
+.hint-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:12px}
+#resultPenalty{font-size:12px;color:#ffdab2;line-height:1.5}
+.result-hints{white-space:pre-line;font-size:13px;line-height:1.65;color:#d5f6eb;padding:0;min-height:0}
+.result-hints:not(:empty){padding:9px 11px;margin-top:9px;background:#143d42;border-left:3px solid #8cd9be;border-radius:7px}
+#resultSkip{border-color:#a57165;color:#ffd7bd}
+#resultFeedback{line-height:1.65;min-height:34px}
+#scienceProgress,#scienceScore{line-height:1.5;color:#cff6de;margin:7px 0}
+@media(max-width:680px){.number-answer input,.number-answer button{width:100%;flex:1 1 100%}.result-actions{gap:7px}.result-actions button{flex:1 1 42%;min-height:42px}}

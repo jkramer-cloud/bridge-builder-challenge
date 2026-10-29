@@ -1,0 +1,15 @@
+BRIDGE BUILDER v4.3 — GITHUB DEPLOYMENT
+
+Upload these three files into the root of your EXISTING Bridge Builder repository, replacing the old files:
+
+  index.html
+  styles.css
+  game.js
+
+The ZIP includes README.md, CHANGELOG.md, VEHICLE_FIELD_GUIDE.md, SCIENCE_CHALLENGE_GUIDE.md and PREVIEWS for documentation only.
+
+Do not replace the main Naches Learning Hub index.html. Its existing Bridge Builder link should continue to work without changes.
+
+After publishing, hard-refresh the game (Ctrl + Shift + R), confirm it says v4.3, and complete a bridge crossing: the next level should remain locked until the Engineering Check is solved. Try a wrong answer or Skip on a non-first mission to verify the recovery gate.
+
+Save migration: v4.2 progress, level stars, and current mission history are retained. A new science recovery gate is added in browser localStorage. No new personal information is collected.
